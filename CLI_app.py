@@ -6,7 +6,7 @@ while True:
     # To clear cmd/terminal for better experience
     os.system("clear")
 
-    if not (directory := input("Enter path the folder that you want to sort: ")):
+    if not (directory := input("Enter path of the folder that you want to sort: ")):
         directory = "./"
 
     if os.path.exists(directory):
