@@ -2,7 +2,7 @@
 <p>
 CLI (Command Line Interface) Application for sorting folder by file extension
 
-GUI (Graphical User Interface) Coming soon ...
+> GUI (Graphical User Interface) Coming soon ...
 </p>
 
 ## How To Use
