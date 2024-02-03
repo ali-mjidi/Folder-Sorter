@@ -1,15 +1,22 @@
 import os
 
-os.system("clear")
+while True:
+    os.system("clear")
 
-home_directory = os.environ["HOME"]
-directory = f"{home_directory}/Desktop/test"
+    if not (directory := input("Enter path the folder that you want to sort: ")):
+        directory = "./"
+
+    if os.path.exists(directory):
+        break
+    else:
+        input("\nDirectory doesn't exists or not a folder\nPress ENTER to Try Again...")
+
 directory_files = os.listdir(directory)
 
-extension_exporter = lambda file: file[file.find(".")+1::1]
+def extension_exporter(file): return file[file.find(".")+1::1]
 
 files_extensions = list(set(map(extension_exporter, directory_files)))
-    
+
 for folder in files_extensions:
     folder_path = f"{directory}/{folder}"
     if not os.path.exists(folder_path):
@@ -17,6 +24,7 @@ for folder in files_extensions:
 
 for file in directory_files:
     if os.path.isfile(f"{directory}/{file}"):
-        os.system(f"mv {directory}/{file} {directory}/{extension_exporter(file)}")
+        os.system(
+            f"mv {directory}/{file} {directory}/{extension_exporter(file)}")
 
-print("Done Successfully :)")
+input("Done Successfully :)\nPress ENTER To Exit...")
