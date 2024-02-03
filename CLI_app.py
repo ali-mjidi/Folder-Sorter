@@ -6,6 +6,8 @@ while True:
     # To clear cmd/terminal for better experience
     os.system("clear")
 
+    print("*** Warning: If you just hit ENTER button, current folder will be sort\n    So be Careful :)\n")
+    
     if not (directory := input("Enter path of the folder that you want to sort: ")):
         directory = "./"
 
@@ -36,4 +38,4 @@ for file in directory_files:
             f"mv {directory}/{file} {directory}/{extension_exporter(file)}")
 
 # FINISH
-input("Done Successfully :)\nPress ENTER To Exit...")
+input("\nDone Successfully :)\nPress ENTER To Exit...")
